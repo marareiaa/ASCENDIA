@@ -119,21 +119,14 @@ ul {
 }
 
 .logo {
-    font-weight: 900;
-    font-size: 1.6rem;
-    letter-spacing: 1.5px;
-    color: var(--text-white);
     display: flex;
     align-items: center;
-    gap: 8px;
 }
 
-.logo-icon {
-    background: var(--main-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 2rem;
+.logo-img {
+    height: 200px;
+    width: auto;
+    display: block;
 }
 
 .nav-menu {
@@ -181,91 +174,174 @@ ul {
    HERO SECTION
    ========================================================================== */
 .hero-section {
-    padding-top: 180px;
-    padding-bottom: 100px;
-    background: radial-gradient(circle at 20% 30%, var(--color-purple-light) 0%, var(--bg-deep) 70%);
+    padding-top: 160px;
+    padding-bottom: 90px;
+
+    background: radial-gradient(
+        circle at 20% 30%,
+        var(--color-purple-light) 0%,
+        var(--bg-deep) 70%
+    );
+
     position: relative;
+    overflow: hidden;
 }
 
 .hero-container {
     display: grid;
-    grid-template-columns: 1.12fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
     align-items: center;
-    gap: 40px;
+    gap: 80px;
 }
+
+/* =====================================================
+   LADO DA IMAGEM
+===================================================== */
 
 .hero-image-side {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.hero-image-side::before {
-    content: "S";
-    position: absolute;
-    font-family: var(--font-primary);
-    font-size: 32rem;
-    font-weight: 900;
-    line-height: 1;
-    background: var(--main-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    opacity: 0.85;
-    z-index: 1;
-    transform: rotate(-10deg) translate(-20px, -10px);
-    user-select: none;
+    width: 550px;
+    height: 550px;
+
+    margin: 0 auto;
 }
 
 .s-shape-bg {
-    display: none;
+    position: absolute;
+    transform: scale(1.95);
+
+    top: -65px;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    z-index: 1;
 }
 
 .hero-img {
-    position: relative;
+    position: absolute;
+
+    left: -275px;
+    bottom: 0;
+
+    height: 600px;
+    width: auto;
+
     z-index: 2;
-    max-width: 100%;
-    height: 480px;
-    object-fit: cover;
-    border-radius: 24px;
 }
 
+/* =====================================================
+   LADO DO TEXTO
+===================================================== */
+
 .hero-text-side {
-    z-index: 2;
+    position: relative;
+    z-index: 5;
+    top: -4px;
 }
 
 .hero-title {
-    font-size: 3.2rem;
+    font-size: 3.4rem;
     font-weight: 900;
-    line-height: 1.15;
+
+    line-height: 1.1;
+
     margin-bottom: 28px;
+
     text-transform: uppercase;
-    letter-spacing: -0.5px;
 }
 
 .hero-title .highlight {
     background: var(--main-gradient);
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
     background-clip: text;
 }
 
 .hero-description {
-    font-family: var(--font-secondary);
+    max-width: 560px;
+
     color: var(--text-muted);
+
     font-size: 1.1rem;
-    margin-bottom: 40px;
-    max-width: 540px;
+    line-height: 1.8;
+
+    margin-bottom: 36px;
 }
 
 .btn-hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     background: #ffffff;
-    color: #1a1a1a;
-    padding: 16px 40px;
-    font-size: 0.95rem;
+    color: #111111;
+
+    padding: 18px 40px;
+
+    border-radius: 999px;
+
     font-weight: 800;
-    border: 1px solid #e0e0e0;
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.btn-hero:hover {
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-image-side {
+        width: 420px;
+        height: 420px;
+    }
+
+    .hero-img {
+        height: 380px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero-image-side {
+        width: 320px;
+        height: 320px;
+    }
+
+    .hero-img {
+        height: 300px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
 }
 
 /* ==========================================================================
@@ -276,18 +352,38 @@ ul {
 }
 
 .quote-banner {
-    background: var(--main-gradient);
-    padding: 32px;
-    border-radius: 40px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(254, 65, 46, 0.2);
+    position: relative;
+    width: 100%;
+}
+
+.quote-banner-img {
+    width: 144%;
+    display: block;
+    position: relative;
+    top: -450px;
+    left: -252px;
+
 }
 
 .quote-text {
-    font-size: 1.3rem;
-    font-weight: 600;
+    position: absolute;
+
+    top: 1%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    margin: 0;
+
+    color: #fff;
+
     text-align: center;
-    color: var(--text-white);
+
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 /* ==========================================================================
@@ -440,6 +536,7 @@ ul {
 
 .plans-section .badge-title {
     color: var(--text-white);
+    
 }
 
 .plans-section .sub-section-title,
