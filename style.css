@@ -29,12 +29,15 @@ html {
 scroll-behavior: smooth;
 scroll-padding-top: 80px;
 font-size: 18px;
+overflow-x: hidden;
+max-width: 100%;
 }
 body {
 font-family: var(--font);
 background: var(--bg);
 color: var(--white);
 overflow-x: hidden;
+max-width: 100%;
 line-height: 1.65;
 }
 img { max-width: 100%; height: auto; display: block; }
@@ -107,10 +110,10 @@ padding: .6rem 0;
 height: 80px;
 }
 .nav-logo {
-width: 150px;
+width: 190px;
 height: auto;
 display: block;
-max-height: 70px;
+max-height: 80px;
 }
 .navbar-brand:hover .nav-logo {
 transform: scale(1.05);
@@ -909,7 +912,7 @@ display: flex;
 justify-content: flex-start;
 }
 .footer-logo {
-width: 150px;
+width: 190px;
 height: auto;
 display: block;
 opacity: 0.9;
@@ -970,74 +973,102 @@ color: rgba(255,255,255,.35);
 transition: color var(--trans);
 }
 .footer-bottom a:hover { color: var(--coral); }
+
 /* ══════════════════════════════════════════
-RESPONSIVE
+RESPONSIVIDADE
 ══════════════════════════════════════════ */
-@media (max-width: 991.98px) {
+@media (max-width: 991px) {
+html { font-size: 17px; }
+
+#mainNav { height: 80px; }
+#mainNav.scrolled { height: 72px; }
+.nav-logo { width: 150px; max-height: 60px; }
+
 .hero-section { padding: 110px 0 30px; }
 .hero-row { min-height: auto; }
-.hero-art { height: 450px; margin-bottom: 2.5rem; }
-.hero-photo {
-width: 100%;
-height: 580px;
-max-height: 600px;
-left: 0;
-top: 0;
-}
-.hero-shape-1 { width: 65%; height: 65%; }
-.hero-shape-2 { width: 55%; height: 55%; }
-.hero-text-inner { padding-left: 0; max-width: 100%; text-align: center; }
-.hero-p { margin: 0 auto 1.5rem auto; }
-.title-banner { padding: 1.1rem 2rem; }
-.quem-photo { height: 420px; }
-.cta-box { padding: 2rem 1.75rem; }
-.cta-left { flex-direction: column; align-items: flex-start; gap: .8rem; }
-#mainNav { height: 80px; }
-.nav-logo { width: 130px; max-height: 60px; }
-}
-@media (max-width: 767.98px) {
-.hero-h1 { font-size: clamp(1.5rem, 6.5vw, 2.1rem); }
-.btn-hero { width: 100%; text-align: center; }
-.cta-buttons { width: 100%; flex-direction: column; }
-.cta-buttons a { width: 100%; text-align: center; }
+.hero-art { height: 460px; max-width: 360px; }
+.hero-photo { width: 100%; height: 100%; left: 0; top: 0; position: absolute; }
+.hero-shape-1 { width: 230px; height: 230px; }
+.hero-shape-2 { width: 200px; height: 200px; }
+.hero-text-inner { padding-left: 0; margin-top: 2.5rem; max-width: 100%; }
+
+.title-banner { padding: 1.1rem 2.2rem; }
+
+.quem-photo { height: auto; max-height: 520px; }
+
+.como-steps { gap: 1.2rem; }
+.como-step { flex: 1 1 45%; max-width: none; }
 .como-arrow { display: none; }
-.como-step { max-width: 100%; flex-basis: 100%; }
-.como-steps { gap: 1.6rem; }
-.quote-banner { padding: 2.2rem 1.5rem; }
-.problema-section, .como-section, .quem-section { padding-top: 60px; padding-bottom: 70px; }
-.title-banner--right {
-margin-top: 0;
-border-radius: 0 60px 60px 0;
-margin-left: 0;
-margin-right: 0;
-width: min(560px, 92%);
+
+.cta-box { padding: 2rem; justify-content: center; text-align: center; }
+.cta-left { flex-direction: column; text-align: center; }
+.cta-buttons { justify-content: center; width: 100%; }
 }
-.title-banner--right h2 { text-align: left; }
+
+@media (max-width: 767px) {
+html { font-size: 16px; }
+
+#mainNav { height: 76px; }
+.nav-logo { width: 140px; max-height: 54px; }
+
+.hero-section { padding: 100px 0 30px; }
+.hero-art { height: 380px; max-width: 100%; }
+.hero-shape-1, .hero-shape-2 { display: none; }
+
+.quote-banner { padding: 2.2rem 1.5rem; margin-top: -30px; }
+
+.title-banner { padding: 1rem 1.6rem; width: min(420px, 96%); }
+.title-banner--left { border-radius: 0 40px 40px 0; }
+.title-banner--right { border-radius: 40px; }
+
+.problema-section { padding: 50px 0 70px; }
+.problema-p { text-align: left; }
+
+.quem-section { padding: 60px 0; }
+.quem-photo { max-height: 420px; }
+.quem-p { text-align: left; }
+
+.como-section { padding: 60px 0 80px; }
+.como-step { flex: 1 1 100%; }
+
+.planos-section { padding: 60px 0 70px; }
+.planos-title-banner { margin-bottom: 2.5rem; }
+
+.cta-box { padding: 1.6rem; }
+.cta-buttons { flex-direction: column; align-items: stretch; }
+.cta-buttons a { text-align: center; }
+
+.footer-logo, .nav-logo { width: 150px; }
+.footer-brand-card { text-align: left; }
+}
+
+@media (max-width: 575px) {
+html { font-size: 15px; }
+
 #mainNav { height: 70px; }
-.nav-logo { width: 120px; max-height: 50px; }
-.footer-logo { width: 120px; }
-.footer-bottom { flex-direction: column; text-align: center; }
+.nav-logo { width: 120px; max-height: 46px; }
+
+.hero-art { height: 300px; }
+
+.depo-card { padding: 1.5rem; }
+
+.footer-bottom { flex-direction: column; align-items: flex-start; }
 }
-@media (max-width: 575.98px) {
-.hero-art { height: 380px; width: 100%; }
-.hero-shape-1 { width: 220px; height: 220px; }
-.hero-shape-2 { width: 190px; height: 190px; }
-.hero-photo { width: 260px; height: 420px; left: 50%; transform: translateX(-50%); top: 0; }
-.hero-blob-br { width: 240px; height: 240px; right: -90px; bottom: -110px; }
-.plano-card { padding: 1.5rem 1.25rem; }
-.title-banner h2 { font-size: 1.4rem; }
-.title-banner { padding: 1rem 1.5rem; }
-#mainNav { height: 65px; }
-.nav-logo { width: 110px; max-height: 45px; }
-.footer-logo { width: 110px; }
-}
-/* ── Focus / a11y ── */
-a:focus-visible, button:focus-visible {
-outline: 2px solid var(--coral);
-outline-offset: 3px;
-border-radius: 4px;
-}
-/* ── Reduced motion ── */
+/* ══════════════════════════════════════════
+   FLUIDEZ — acessibilidade de movimento
+   Bloco aditivo: só atua quando o usuário pede
+   "reduzir movimento" no sistema. Não altera o
+   visual padrão da página.
+══════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-.reveal { transition: none; opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal { opacity: 1 !important; transform: none !important; }
 }
