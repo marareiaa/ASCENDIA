@@ -1,66 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // ==========================================================================
-    // MENU MOBILE (HAMBÚRGUER)
-    // ==========================================================================
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
+'use strict';
 
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-            
-            // Animação visual das linhas do botão hambúrguer
-            const spans = menuToggle.querySelectorAll('span');
-            if (navMenu.classList.contains('open')) {
-                spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
+/* ── Navbar scroll ── */
+const nav = document.getElementById('mainNav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 50);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* ── Active nav link ── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
+
+const updateActive = () => {
+  const y = window.scrollY + 90;
+  sections.forEach(sec => {
+    if (y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) {
+      navLinks.forEach(l => {
+        l.classList.remove('is-active');
+        if (l.getAttribute('href') === '#' + sec.id) l.classList.add('is-active');
+      });
     }
+  });
+};
+window.addEventListener('scroll', updateActive, { passive: true });
 
-    // Fechar menu mobile ao clicar em um link interno
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('open')) {
-                navMenu.classList.remove('open');
-                const spans = menuToggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
-    });
+/* ── Intersection Observer reveals ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-    // ==========================================================================
-    // LINK ATIVO CONFORME O SCROLL (SCROLLSPY)
-    // ==========================================================================
-    const sections = document.querySelectorAll('section[id]');
-    
-    window.addEventListener('scroll', () => {
-        let currentSectionId = '';
-        const scrollPosition = window.scrollY + 100; // Offset para ativação precisa
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                currentSectionId = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
-                link.classList.add('active');
-            }
-        });
-    });
+/* ── Smooth scroll for anchor links ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 });
