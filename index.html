@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ascendia transforma seu currículo em uma ferramenta estratégica para vencer a barreira invisível dos processos seletivos."/>
+  <meta name="theme-color" content="#160f1d"/>
+  <meta property="og:title" content="Ascendia — Eleve seu potencial. Conquiste oportunidades."/>
+  <meta property="og:description" content="Transforme seu currículo em uma ferramenta estratégica e vença os filtros automáticos dos processos seletivos."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/img/marca.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <title>Ascendia — Eleve seu potencial. Conquiste oportunidades.</title>
+  <link rel="icon" href="assets/img/marca.png" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- CSS modular (carregado na ordem) -->
+  <link rel="stylesheet" href="assets/css/base.css"/>
+  <link rel="stylesheet" href="assets/css/navbar.css"/>
+  <link rel="stylesheet" href="assets/css/hero.css"/>
+  <link rel="stylesheet" href="assets/css/sections.css"/>
+  <link rel="stylesheet" href="assets/css/planos.css"/>
+  <link rel="stylesheet" href="assets/css/footer.css"/>
+  <link rel="stylesheet" href="assets/css/responsive.css"/>
+  <link rel="stylesheet" href="assets/css/enhancements.css"/>
+</head>
+<body>
+
+<!-- Barra de progresso de scroll -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<nav id="mainNav" class="navbar navbar-expand-lg fixed-top" aria-label="Navegação principal">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/marca.png" alt="Ascendia" class="nav-logo" width="217" height="56">
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-label="Abrir menu">
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto gap-lg-3 gap-1">
+        <li class="nav-item"><a class="nav-link" href="#hero">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#quem-somos">Quem Somos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
+        <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+        <li class="nav-item"><a class="nav-link" href="diagnostico.html">Diagnostico</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <a href="#" class="nav-link-login">Login</a>
+        <span class="nav-divider" aria-hidden="true"></span>
+        <a href="#planos" class="btn-cadastrar">Cadastrar-se</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE OFFCANVAS -->
+<div class="offcanvas offcanvas-end" id="mobileNav" tabindex="-1">
+  <div class="offcanvas-header">
+    <div class="d-flex align-items-center gap-2">
+      <svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 3 L36 37 H29.5 L20 14.5 L10.5 37 H4 Z" fill="none" stroke="#ff5a36" stroke-width="2.6" stroke-linejoin="round"/>
+        <path d="M9 27 C16 22, 24 32, 31 26" fill="none" stroke="#ff5a36" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <span style="color:#ff5a36;font-weight:800;font-size:.95rem;letter-spacing:.08em;">ASCENDIA</span>
+    </div>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <ul class="navbar-nav flex-column gap-1 mb-4">
+      <li><a class="mobile-nav-link" href="#hero" data-bs-dismiss="offcanvas">Início</a></li>
+      <li><a class="mobile-nav-link" href="#quem-somos" data-bs-dismiss="offcanvas">Quem Somos</a></li>
+      <li><a class="mobile-nav-link" href="#como-funciona" data-bs-dismiss="offcanvas">Como Funciona</a></li>
+      <li><a class="mobile-nav-link" href="#depoimentos" data-bs-dismiss="offcanvas">Depoimentos</a></li>
+      <li><a class="mobile-nav-link" href="#planos" data-bs-dismiss="offcanvas">Planos</a></li>
+      <li><a class="mobile-nav-link" href="diagnostico.html">Diagnóstico</a></li>
+      <li><a class="mobile-nav-link" href="#faq" data-bs-dismiss="offcanvas">FAQ</a></li>
+      <li><a class="mobile-nav-link" href="#" data-bs-dismiss="offcanvas">Login</a></li>
+    </ul>
+    <a href="#planos" class="btn-cadastrar w-100 text-center mt-auto" data-bs-dismiss="offcanvas">Cadastrar-se</a>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section id="hero" class="hero-section">
+  <div class="container">
+    <div class="row align-items-center hero-row">
+      <div class="col-lg-5 reveal reveal-left">
+        <div class="hero-art">
+          <span class="hero-shape hero-shape-1" aria-hidden="true"></span>
+          <span class="hero-shape hero-shape-2" aria-hidden="true"></span>
+          <img src="assets/img/profissional.png" alt="Profissional usando a Ascendia" class="hero-photo" width="560" height="640" fetchpriority="high"/>
+        </div>
+      </div>
+      <div class="col-lg-7 reveal reveal-right reveal-d1">
+        <div class="hero-text-inner">
+          <h1 class="hero-h1">
+            ELEVE SEU POTENCIAL.<br>
+            CONQUISTE<br>
+            OPORTUNIDADES.
+          </h1>
+          <p class="hero-p">
+            Não deixe que um filtro automático ignore seu talento. A Ascendia transforma seu currículo em uma ferramenta estratégica para você vencer a barreira invisível dos processos seletivos.
+          </p>
+          <a href="#planos" class="btn-hero mt-4 d-inline-block">COMECE A COMPETIR DE VERDADE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BANNER -->
+<section class="quote-section reveal" aria-label="Depoimento em destaque">
+  <div class="quote-banner">
+    <div class="container">
+      <p class="quote-text">
+        "Meu currículo e eu temos algo em comum: somos ignorados." — José Martins, usuário Ascendia
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- O PROBLEMA -->
+<section id="problema" class="problema-section">
+  <div class="title-banner title-banner--left reveal">
+    <h2>O PROBLEMA</h2>
+  </div>
+  <div class="container mt-5">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5 reveal reveal-left">
+        <h3 class="problema-h2">MILHARES DE TALENTOS ESTÃO SENDO IGNORADOS TODOS OS DIAS.</h3>
+        <p class="problema-p">Currículos genéricos, falta de orientação e filtros automáticos impedem que profissionais competentes sejam vistos pelo mercado.</p>
+      </div>
+      <div class="col-lg-6 offset-lg-1">
+        <div class="d-flex flex-column gap-4">
+          <div class="prob-item reveal">
+            <div class="prob-icon-wrap" aria-hidden="true"><i class="bi bi-file-earmark-person"></i></div>
+            <div>
+              <h4 class="prob-item-title">CURRÍCULOS GENÉRICOS</h4>
+              <p class="prob-item-desc">Modelos iguais não destacam o que torna você único.</p>
+            </div>
+          </div>
+          <div class="prob-item reveal reveal-d1">
+            <div class="prob-icon-wrap" aria-hidden="true"><i class="bi bi-person"></i></div>
+            <div>
+              <h4 class="prob-item-title">FALTA DE ORIENTAÇÃO</h4>
+              <p class="prob-item-desc">Muitos candidatos não aprenderam a se posicionar profissionalmente.</p>
+            </div>
+          </div>
+          <div class="prob-item reveal reveal-d2">
+            <div class="prob-icon-wrap" aria-hidden="true"><i class="bi bi-funnel"></i></div>
+            <div>
+              <h4 class="prob-item-title">FILTROS ATS</h4>
+              <p class="prob-item-desc">Seu currículo pode ser eliminado automaticamente antes da análise humana.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM SOMOS -->
+<section id="quem-somos" class="quem-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5 reveal reveal-left">
+        <img
+          src="assets/img/profissional02.png"
+          alt="Profissional de sucesso representando usuários da Ascendia"
+          class="quem-photo"
+          width="600" height="640"
+          loading="lazy"
+        />
+      </div>
+      <div class="col-lg-7 reveal reveal-right reveal-d1">
+        <div class="title-banner title-banner--right mb-4">
+          <h2>QUEM SOMOS</h2>
+        </div>
+        <div class="quem-text-inner">
+          <h3 class="quem-h2">A ASCENDIA NASCEU PARA TRANSFORMAR SEU POTENCIAL EM OPORTUNIDADES.</h3>
+          <p class="quem-p">Somos uma plataforma que combina tecnologia, inteligência artificial e orientação estratégica para ajudar profissionais a se destacarem no mercado de trabalho.</p>
+          <p class="quem-p">Acreditamos que talento merece ser reconhecido. Por isso, criamos soluções que ajudam nossos usuários a fortalecer sua presença profissional, conquistar novas oportunidades e evoluir continuamente em sua jornada.</p>  
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona" class="como-section">
+  <div class="title-banner title-banner--left reveal">
+    <h2>COMO FUNCIONA</h2>
+  </div>
+  <div class="container">
+    <p class="como-subtitle text-center reveal">UMA CONSULTORIA INTELIGENTE NO SEU BOLSO</p>
+    <div class="como-steps mt-4">
+      <div class="como-step reveal">
+        <div class="como-card">
+          <div class="como-num">1</div>
+          <div class="como-icon-wrap"><i class="bi bi-stars"></i></div>
+          <h3 class="como-title">Conte sua trajetória</h3>
+          <p class="como-desc">Adicione experiências, habilidades, formação e objetivos profissionais.</p>
+        </div>
+      </div>
+      <div class="como-arrow" aria-hidden="true">&#187;</div>
+      <div class="como-step reveal reveal-d1">
+        <div class="como-card">
+          <div class="como-num">2</div>
+          <div class="como-icon-wrap"><i class="bi bi-bullseye"></i></div>
+          <h3 class="como-title">Informe a vaga desejada</h3>
+          <p class="como-desc">A Ascendia entende o que o mercado procura.</p>
+        </div>
+      </div>
+      <div class="como-arrow" aria-hidden="true">&#187;</div>
+      <div class="como-step reveal reveal-d2">
+        <div class="como-card">
+          <div class="como-num">3</div>
+          <div class="como-icon-wrap"><i class="bi bi-file-earmark-check"></i></div>
+          <h3 class="como-title">Receba otimizações inteligentes</h3>
+          <p class="como-desc">Seu currículo é ajustado estrategicamente para aumentar suas chances.</p>
+        </div>
+      </div>
+      <div class="como-arrow" aria-hidden="true">&#187;</div>
+      <div class="como-step reveal reveal-d3">
+        <div class="como-card">
+          <div class="como-num">4</div>
+          <div class="como-icon-wrap"><i class="bi bi-chat-square-dots"></i></div>
+          <h3 class="como-title">Prepare-se para entrevistas</h3>
+          <p class="como-desc">Simulações, perguntas prováveis e orientações personalizadas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos" class="depo-section">
+  <div class="depo-title-band reveal">
+    <h2 class="depo-h2">O QUE NOSSOS CLIENTES DIZEM</h2>
+  </div>
+  <div class="container mt-5">
+    <div class="row g-4">
+      <div class="col-12 col-md-4 reveal">
+        <div class="depo-card">
+          <span class="depo-qq" aria-hidden="true">&#8220;</span>
+          <p class="depo-text">Eu mandava currículo pra todo lado e não entendia o porquê de ninguém responder. A Ascendia me mostrou exatamente onde eu tava errando.</p>
+          <div class="depo-author">
+            <img src="https://i.pravatar.cc/48?img=47" alt="Ana Clara Martins" class="depo-avatar" width="44" height="44" loading="lazy"/>
+            <div>
+              <strong class="depo-name">Ana Clara Martins</strong>
+              <span class="depo-role">Analista de Planejamento</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 reveal reveal-d1">
+        <div class="depo-card">
+          <span class="depo-qq" aria-hidden="true">&#8220;</span>
+          <p class="depo-text">Meu currículo parecia ok... até eu ver o quanto ele podia melhorar. Depois da Ascendia, comecei a receber retorno em dias.</p>
+          <div class="depo-author">
+            <img src="https://i.pravatar.cc/48?img=12" alt="Lucas Henrique" class="depo-avatar" width="44" height="44" loading="lazy"/>
+            <div>
+              <strong class="depo-name">Lucas Henrique</strong>
+              <span class="depo-role">Internacionalista</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 reveal reveal-d2">
+        <div class="depo-card">
+          <span class="depo-qq" aria-hidden="true">&#8220;</span>
+          <p class="depo-text">Não é só um ajuste de currículo. É clareza de carreira. Você entende o jogo.</p>
+          <div class="depo-author">
+            <img src="https://i.pravatar.cc/48?img=25" alt="Mariana Alves" class="depo-avatar" width="44" height="44" loading="lazy"/>
+            <div>
+              <strong class="depo-name">Mariana Alves</strong>
+              <span class="depo-role">Desenvolvedora Júnior</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos" class="planos-section">
+  <div class="container">
+    <div class="planos-title-banner reveal">
+      <h2 class="planos-h2">NOSSOS PLANOS<br>DE SERVIÇO</h2>
+    </div>
+    <div class="row g-4 justify-content-center mt-1">
+      <div class="col-12 col-sm-6 col-xl-3 reveal">
+        <div class="plano-card">
+          <p class="plano-name">ORIGIN</p>
+          <p class="plano-slogan">Seu ponto de partida profissional.</p>
+          <div class="plano-price">
+            <span class="plano-curr">R$</span><span class="plano-val">19,90</span><span class="plano-per">/mês</span>
+          </div>
+          <ul class="plano-list">
+            <li><i class="bi bi-check-square"></i> Currículo estruturado</li>
+            <li><i class="bi bi-check-square"></i> Análise automática</li>
+            <li><i class="bi bi-check-square"></i> Correção de erros</li>
+            <li><i class="bi bi-check-square"></i> Sugestão de melhoria</li>
+            <li><i class="bi bi-check-square"></i> Score inicial</li>
+          </ul>
+          <a href="#" class="btn-plano-outline w-100 mt-auto">Começar Agora</a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-xl-3 reveal reveal-d1">
+        <div class="plano-card plano-popular">
+          <div class="popular-badge">MAIS POPULAR!</div>
+          <p class="plano-name">ASCEND</p>
+          <p class="plano-slogan">Comece a competir de verdade.</p>
+          <div class="plano-price">
+            <span class="plano-curr">R$</span><span class="plano-val">39,90</span><span class="plano-per">/mês</span>
+          </div>
+          <p class="plano-everything"><span class="dot" aria-hidden="true"></span> Tudo do Plano Origin +</p>
+          <ul class="plano-list">
+            <li><i class="bi bi-check-square"></i> Otimização ATS</li>
+            <li><i class="bi bi-check-square"></i> Reorganização estratégica</li>
+            <li><i class="bi bi-check-square"></i> Destaque de habilidades</li>
+            <li><i class="bi bi-check-square"></i> Recomendações de cursos</li>
+            <li><i class="bi bi-check-square"></i> Compatibilidade com vagas</li>
+          </ul>
+          <a href="#" class="btn-plano-dark w-100 mt-auto">Escolher Plano</a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-xl-3 reveal reveal-d2">
+        <div class="plano-card">
+          <p class="plano-name">EVOLVE</p>
+          <p class="plano-slogan">Desenvolva seu potencial com direção.</p>
+          <div class="plano-price">
+            <span class="plano-curr">R$</span><span class="plano-val">69,90</span><span class="plano-per">/mês</span>
+          </div>
+          <p class="plano-everything"><span class="dot" aria-hidden="true"></span> Tudo do Plano Ascend +</p>
+          <ul class="plano-list">
+            <li><i class="bi bi-check-square"></i> Simulação de entrevistas</li>
+            <li><i class="bi bi-check-square"></i> Análise de perfil profissional</li>
+            <li><i class="bi bi-check-square"></i> Otimização para vagas específicas</li>
+            <li><i class="bi bi-check-square"></i> Sugestões de comunicação</li>
+            <li><i class="bi bi-check-square"></i> Score inicial</li>
+          </ul>
+          <a href="#" class="btn-plano-outline w-100 mt-auto">Evoluir Agora</a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-xl-3 reveal reveal-d3">
+        <div class="plano-card">
+          <p class="plano-name">DOMINATE</p>
+          <p class="plano-slogan">Se posicione entre os melhores.</p>
+          <div class="plano-price">
+            <span class="plano-curr">R$</span><span class="plano-val">119,90</span><span class="plano-per">/mês</span>
+          </div>
+          <p class="plano-everything"><span class="dot" aria-hidden="true"></span> Tudo do Plano Evolve +</p>
+          <ul class="plano-list">
+            <li><i class="bi bi-check-square"></i> Estratégia profissional</li>
+            <li><i class="bi bi-check-square"></i> Planejamento de carreira</li>
+            <li><i class="bi bi-check-square"></i> Currículos para múltiplas vagas</li>
+            <li><i class="bi bi-check-square"></i> Análise de LinkedIn</li>
+            <li><i class="bi bi-check-square"></i> Acompanhamento contínuo</li>
+          </ul>
+          <a href="#" class="btn-plano-outline w-100 mt-auto">Dominar Mercado</a>
+        </div>
+      </div>
+    </div>
+    <p class="planos-footnote reveal">ESCOLHA O PLANO IDEAL PARA SUA EVOLUÇÃO.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="title-banner title-banner--left reveal">
+      <h2>PERGUNTAS FREQUENTES</h2>
+    </div>
+    <p class="faq-intro reveal">Tudo o que você precisa saber antes de começar a competir de verdade.</p>
+    <div class="faq-wrap reveal">
+      <div class="accordion accordion-flush" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+              O que é um filtro ATS e como a Ascendia ajuda?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              ATS (Applicant Tracking System) é o software que filtra currículos antes de um humano analisá-los. A Ascendia estrutura e otimiza seu currículo com as palavras-chave e o formato certos para passar por esses filtros e chegar ao recrutador.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              Preciso ter experiência para usar a plataforma?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Não. A Ascendia atende desde quem busca o primeiro emprego até profissionais sêniores. O plano Origin é o ponto de partida ideal para quem está começando.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              Posso trocar de plano a qualquer momento?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sim. Você pode fazer upgrade ou downgrade quando quiser, direto no seu painel. A cobrança é ajustada automaticamente no ciclo seguinte.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+              Meus dados estão seguros?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Totalmente. Seus dados são usados apenas para gerar e otimizar seu currículo, com armazenamento seguro e em conformidade com a LGPD. Nunca compartilhamos suas informações sem autorização.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+              Como funciona a otimização por inteligência artificial?
+            </button>
+          </h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              A IA analisa sua trajetória e a vaga desejada, identifica lacunas e reorganiza seu currículo de forma estratégica — destacando habilidades relevantes e ajustando a linguagem para o que o mercado procura.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section reveal">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-left">
+        <div class="cta-rocket" aria-hidden="true"><i class="bi bi-rocket-takeoff-fill"></i></div>
+        <div>
+          <h2 class="cta-title">Seu potencial merece ser visto.</h2>
+          <p class="cta-desc">Pare de enviar currículos sem resposta. Comece a transformar sua apresentação profissional em oportunidades reais.</p>
+        </div>
+      </div>
+      <div class="cta-buttons">
+        <a href="diagnostico.html" class="btn-cta-grad">Criar meu currículo</a>
+        <a href="#como-funciona" class="btn-outline-w">Testar a Ascendia <i class="bi bi-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+
+    <!-- Faixa de newsletter -->
+    <div class="footer-cta reveal">
+      <div class="footer-cta-text">
+        <h3>Receba dicas de carreira no seu e-mail</h3>
+        <p>Conteúdo prático sobre currículos, entrevistas e mercado — sem spam.</p>
+      </div>
+      <form class="footer-newsletter" id="newsletterForm">
+        <label for="newsletterEmail" class="visually-hidden">Seu e-mail</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="Seu melhor e-mail" required autocomplete="email"/>
+        <button type="submit" aria-label="Inscrever-se">
+          <span class="nl-label">Inscrever-se</span>
+          <i class="bi bi-arrow-right nl-icon" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- Marca + colunas -->
+    <div class="footer-main">
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-lg-4">
+          <div class="footer-brand-card">
+            <img src="assets/img/marca.png" alt="Ascendia" class="footer-logo" width="220" height="57">
+            <p class="footer-tagline">Eleve seu potencial.<br>Conquiste oportunidades.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <p class="footer-heading">NAVEGAÇÃO</p>
+          <ul class="footer-links">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#problema">Diferenciais</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <p class="footer-heading">INSTITUCIONAL</p>
+          <ul class="footer-links">
+            <li><a href="#quem-somos">Sobre a Ascendia</a></li>
+            <li><a href="#">Para Empresas</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <p class="footer-heading">LEGAL</p>
+          <ul class="footer-links">
+            <li><a href="#">Termos de uso</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <p class="footer-heading">SIGA A ASCENDIA</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra inferior -->
+      <div class="footer-bottom">
+        <span>© 2026 Ascendia. Todos os direitos reservados.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de uso</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Voltar ao topo -->
+<button id="backToTop" class="back-to-top" type="button" aria-label="Voltar ao topo">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

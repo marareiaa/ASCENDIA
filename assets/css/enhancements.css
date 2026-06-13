@@ -1,0 +1,72 @@
+/* ══════════════════════════════════════════
+   ENHANCEMENTS — animações e polish
+   Carregado por último. Todas as animações são
+   desativadas pelo bloco prefers-reduced-motion
+   (regras !important em responsive.css).
+══════════════════════════════════════════ */
+
+/* ── 1. Gradiente animado ──
+   O gradiente coral "flui" suavemente de um lado a
+   outro. background-size 200% + pan em alternate. */
+@keyframes gradientFlow {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+.title-banner,
+.hero-h1,
+.depo-qq,
+.como-arrow,
+.btn-cadastrar,
+.btn-cta-grad,
+.footer-newsletter button {
+  background-size: 200% auto;
+  animation: gradientFlow 7s ease-in-out infinite alternate;
+}
+
+/* ── 2. Flutuação sutil (tema "ascender / decolar") ── */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+/*.hero-art { animation: floatY 6s ease-in-out infinite; } - animação na mulher*/
+
+@keyframes floatRocket {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50%      { transform: rotate(-8deg) translateY(-8px); }
+}
+.cta-rocket {
+  background-size: 200% auto;
+  animation: gradientFlow 7s ease-in-out infinite alternate,
+             floatRocket 3.5s ease-in-out infinite;
+}
+
+/* ── 3. Reveals direcionais ──
+   Variantes do .reveal: entram da lateral da coluna.
+   Quando .visible, o .reveal.visible (mais específico)
+   zera o transform — então só preciso do estado inicial. */
+.reveal-left  { transform: translateX(-44px); }
+.reveal-right { transform: translateX(44px); }
+
+/* ── 4. Glow pulsante no card "Mais Popular" ── */
+@keyframes popularGlow {
+  0%, 100% { box-shadow: 0 14px 44px rgba(224,48,62,.45); }
+  50%      { box-shadow: 0 16px 54px rgba(255,90,54,.72); }
+}
+.plano-popular { animation: popularGlow 2.8s ease-in-out infinite; }
+
+/* ── 5. Barra de progresso de scroll ── */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 4px;
+  width: 0;
+  background: var(--grad);
+  background-size: 200% auto;
+  z-index: 2000;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(255,90,54,.4);
+  animation: gradientFlow 7s ease-in-out infinite alternate;
+}
+
+/* ── Polish: cor de seleção e foco coerentes ── */
+::selection { background: rgba(255,90,54,.85); color: #fff; }

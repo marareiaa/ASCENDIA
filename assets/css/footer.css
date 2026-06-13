@@ -1,0 +1,202 @@
+/* ══════════════════════════════════════════
+   FOOTER (faixa newsletter → colunas → barra)
+══════════════════════════════════════════ */
+.site-footer {
+  background: #110b18;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+
+/* ── Faixa de newsletter (topo do footer) ── */
+.footer-cta {
+  background: var(--grad-soft);
+  border-radius: var(--radius-lg);
+  padding: 2.4rem 2.8rem;
+  margin: -55px auto 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 22px 55px rgba(224,48,62,.4);
+}
+.footer-cta-text h3 {
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 .3rem;
+}
+.footer-cta-text p {
+  font-size: .82rem;
+  color: rgba(255,255,255,.85);
+  margin: 0;
+  line-height: 1.5;
+}
+/* Cápsula unificada: input + botão dentro de uma única pílula branca */
+.footer-newsletter {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  background: #fff;
+  border-radius: 50px;
+  padding: 5px;
+  flex: 1 1 360px;
+  max-width: 460px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  transition: box-shadow var(--trans);
+}
+.footer-newsletter:focus-within {
+  box-shadow: 0 0 0 3px rgba(255,255,255,.55), 0 8px 22px rgba(0,0,0,.25);
+}
+.footer-newsletter input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font);
+  font-size: .85rem;
+  color: var(--text-dark);
+  padding: .6rem 1.1rem;
+}
+.footer-newsletter input::placeholder { color: #b3a0a6; }
+.footer-newsletter button {
+  flex-shrink: 0;
+  border: none;
+  background: var(--grad);
+  color: #fff;
+  font-family: var(--font);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  padding: .7rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform var(--trans), box-shadow var(--trans), filter var(--trans);
+}
+.footer-newsletter button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(255,90,54,.5);
+  filter: brightness(1.05);
+}
+.footer-newsletter button:disabled {
+  cursor: default;
+  filter: none;
+  transform: none;
+}
+.footer-newsletter .nl-icon { display: none; font-size: 1.15rem; line-height: 1; }
+
+/* ── Corpo do footer (marca + colunas) ── */
+.footer-main { padding: 70px 0 0; }
+.footer-brand-card { max-width: 320px; }
+.footer-logo {
+  width: 220px;
+  height: auto;
+  display: block;
+  opacity: 0.95;
+  margin-bottom: 1.2rem;
+  transition: transform var(--trans), opacity var(--trans);
+}
+.footer-logo:hover { opacity: 1; transform: scale(1.03); }
+.footer-tagline {
+  font-size: .85rem;
+  color: rgba(255,255,255,.75);
+  line-height: 1.65;
+  margin: 0;
+}
+.footer-heading {
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 1.1rem;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+}
+.footer-links a {
+  font-size: .82rem;
+  color: rgba(255,154,107,.78);
+  transition: color var(--trans), padding-left var(--trans);
+}
+.footer-links a:hover { color: var(--coral); padding-left: 4px; }
+
+.footer-socials {
+  display: flex;
+  gap: .7rem;
+  margin-top: .2rem;
+}
+.footer-socials a {
+  width: 38px; height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.15);
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.75);
+  transition: color var(--trans), transform var(--trans),
+              background var(--trans), border-color var(--trans);
+}
+.footer-socials a:hover {
+  color: #fff;
+  background: var(--grad);
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+/* ── Barra inferior ── */
+.footer-bottom {
+  margin-top: 3.5rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .6rem;
+  font-size: .76rem;
+  color: rgba(255,255,255,.4);
+}
+.footer-bottom-links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.footer-bottom a {
+  color: rgba(255,255,255,.45);
+  transition: color var(--trans);
+}
+.footer-bottom a:hover { color: var(--coral); }
+
+/* ══════════════════════════════════════════
+   BOTÃO VOLTAR AO TOPO
+══════════════════════════════════════════ */
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 48px; height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--grad);
+  color: #fff;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  box-shadow: 0 8px 24px rgba(255,90,54,.5);
+  transition: opacity var(--trans), transform var(--trans),
+              visibility var(--trans), box-shadow var(--trans);
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: none; }
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255,90,54,.7);
+}
