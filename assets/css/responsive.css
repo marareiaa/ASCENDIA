@@ -1,0 +1,179 @@
+/* ══════════════════════════════════════════
+   RESPONSIVIDADE — todos os breakpoints
+   ≥1200  desktop (padrão definido nos módulos)
+   ≤1199  desktop pequeno / laptop
+   ≤991   tablet (navbar vira hambúrguer)
+   ≤767   mobile grande
+   ≤575   mobile
+══════════════════════════════════════════ */
+
+/* ── Laptop / desktop pequeno ── */
+@media (max-width: 1199px) {
+  .nav-logo { height: 50px; }
+  #mainNav.scrolled .nav-logo { height: 44px; }
+  .hero-text-inner { padding-left: 1rem; }
+  .footer-cta { padding: 2.2rem; }
+}
+
+/* ── Tablet ── */
+@media (max-width: 991px) {
+  html { font-size: 17px; }
+
+  #mainNav { height: 84px; }
+  #mainNav.scrolled { height: 76px; }
+  .nav-logo { height: 46px; }
+
+  .hero-section { padding: 120px 0 40px; }
+  .hero-row { min-height: auto; }
+  .hero-art { max-width: 340px; margin: 0 auto 1rem; }
+  .hero-text-inner { padding-left: 0; margin-top: 2rem; max-width: 100%; text-align: center; }
+  .hero-text-inner .hero-p { margin-left: auto; margin-right: auto; }
+
+  .title-banner { padding: 1.1rem 2.2rem; }
+
+  .como-steps { gap: 1.2rem; }
+  .como-step { flex: 1 1 42%; max-width: none; }
+  .como-arrow { display: none; }
+
+  .cta-box { padding: 2rem; justify-content: center; text-align: center; }
+  .cta-left { flex-direction: column; text-align: center; }
+  .cta-buttons { justify-content: center; width: 100%; }
+
+  .footer-cta { flex-direction: column; align-items: center; text-align: center; }
+  /* bloco empilhado: zera o flex-basis (que no eixo vertical inflava a cápsula) */
+  .footer-newsletter { flex: 0 0 auto; width: 100%; max-width: 420px; margin: 0 auto; }
+  .footer-brand-card { max-width: 100%; }
+}
+
+/* ── Mobile grande ── */
+@media (max-width: 767px) {
+  html { font-size: 16px; }
+
+  #mainNav { height: 76px; }
+  .nav-logo { height: 42px; }
+
+  .hero-section { padding: 100px 0 30px; }
+  .hero-art { max-width: 300px; }
+  .hero-shape-1, .hero-shape-2 { display: none; }
+
+  .quote-banner { padding: 2.2rem 1.5rem; margin-top: -30px; }
+
+  .title-banner { padding: 1rem 1.6rem; width: min(420px, 96%); }
+  .title-banner--left { border-radius: 0 40px 40px 0; }
+  .title-banner--right { border-radius: 40px; }
+
+  .problema-section { padding: 50px 0 70px; }
+  .problema-p { text-align: left; }
+
+  .quem-section { padding: 60px 0; }
+  .quem-p { text-align: left; }
+
+  .como-section { padding: 60px 0 80px; }
+  .como-step { flex: 1 1 100%; max-width: 340px; margin: 0 auto; }
+
+  .planos-section { padding: 60px 0 70px; }
+  .planos-title-banner { margin-bottom: 2.5rem; }
+
+  .cta-box { padding: 1.6rem; }
+  .cta-buttons { flex-direction: column; align-items: stretch; }
+  .cta-buttons a { text-align: center; }
+
+  .footer-main { padding: 55px 0 0; }
+  .footer-logo { width: 175px; }
+  .footer-brand-card { text-align: center; margin: 0 auto 1rem; }
+  .footer-brand-card .footer-logo { margin-left: auto; margin-right: auto; }
+  .footer-socials { justify-content: center; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: .8rem; }
+  .footer-bottom-links { justify-content: center; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 575px) {
+  html { font-size: 15px; }
+
+  #mainNav { height: 70px; }
+  .nav-logo { height: 38px; }
+
+  .hero-art { max-width: 260px; }
+
+  .footer-cta { padding: 1.8rem 1.4rem; margin-top: -40px; }
+  /* cápsula no celular: botão vira ícone de seta (input ganha o espaço) */
+  .footer-newsletter input { padding: .65rem 1rem; font-size: .82rem; }
+  .footer-newsletter button {
+    width: 42px; height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-newsletter .nl-label { display: none; }
+  .footer-newsletter .nl-icon  { display: block; }
+
+  .depo-card { padding: 1.5rem; }
+
+  .back-to-top { right: 1rem; bottom: 1rem; width: 44px; height: 44px; }
+
+  /* Colunas do footer empilhadas com mais respiro */
+  .footer-main .footer-heading { margin-top: .5rem; }
+}
+
+/* ══════════════════════════════════════════
+   DIAGNÓSTICO — responsividade
+══════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .site-footer .row {
+    text-align: center;
+  }
+
+  .footer-brand-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+
+  .footer-cta {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-newsletter {
+    width: 100%;
+  }
+}
+/* ══════════════════════════════════════════
+   ACESSIBILIDADE DE MOVIMENTO
+   Atua apenas quando o usuário pede "reduzir
+   movimento" no sistema. Não altera o visual padrão.
+══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
