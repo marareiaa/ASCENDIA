@@ -13,160 +13,30 @@
   /* ── MAPA DE PLANOS ────────────────────── */
   const PLANS = {
     1: {
-      name: 'Dominate',
-      badge: 'Se posicione entre os melhores.',
-      depth: 'Análise Profunda',
-      showUpgrade: false
-    },
-    2: {
-      name: 'Plano Evolve',
-      badge: 'Desenvolva seu potencial com direção.',
-      depth: 'Análise Avançada',
-      showUpgrade: true
-    },
-    3: {
-      name: 'Plano Ascend',
-      badge: 'Comece a competir de verdade.',
-      depth: 'Análise Intermediária',
-      showUpgrade: true
-    },
-    4: {
-      name: 'Plano Origin',
-      badge: 'Seu ponto de partida profissional.',
-      depth: 'Análise Básica',
-      showUpgrade: true
-    }
-  };
-
-  /* ── PROMPTS POR PLANO ─────────────────── */
-  const SYSTEM_PROMPT = `Você é um especialista sênior em recrutamento e desenvolvimento de carreira do mercado brasileiro. 
-Analise currículos com rigor técnico, clareza e empatia. Responda SEMPRE em JSON válido, sem markdown, sem texto fora do JSON.`;
-
-  function buildPrompt(planId, fileName) {
-    const name = fileName || 'curriculo.pdf';
-
-    const base = `O candidato enviou o arquivo "${name}". Como você não tem o conteúdo real do arquivo neste contexto de demonstração, gere uma análise realista e educativa como se tivesse analisado um currículo típico de nível intermediário do mercado brasileiro. Seja específico e didático.`;
-
-    const prompts = {
-      4: `${base}
-
-Gere uma análise BÁSICA (Plano Free) com exatamente este JSON:
-{
-  "score": <número de 0 a 100>,
-  "verdict": "<adjetivo curto ex: Razoável / Bom / Precisa Melhorar>",
-  "highlights": [
-    "<ponto positivo 1>",
-    "<ponto positivo 2>"
-  ],
-  "alerts": [
-    "<problema crítico 1>",
-    "<problema crítico 2>",
-    "<problema crítico 3>"
-  ]
-}`,
-
-      3: `${base}
-
-Gere uma análise INTERMEDIÁRIA (Plano Starter) com exatamente este JSON:
-{
-  "score": <número de 0 a 100>,
-  "verdict": "<adjetivo curto>",
-  "highlights": [
-    "<ponto positivo 1>",
-    "<ponto positivo 2>",
-    "<ponto positivo 3>"
-  ],
-  "alerts": [
-    "<problema crítico 1>",
-    "<problema crítico 2>",
-    "<problema crítico 3>"
-  ],
-  "priorities": [
-    "<ação prioritária 1>",
-    "<ação prioritária 2>",
-    "<ação prioritária 3>"
-  ]
-}`,
-
-      2: `${base}
-
-Gere uma análise AVANÇADA (Plano Pro) com exatamente este JSON:
-{
-  "score": <número de 0 a 100>,
-  "verdict": "<adjetivo curto>",
-  "ats_score": <número de 0 a 100>,
-  "sections": {
-    "objetivo": <número de 0 a 100>,
-    "experiencia": <número de 0 a 100>,
-    "formacao": <número de 0 a 100>,
-    "habilidades": <número de 0 a 100>,
-    "layout": <número de 0 a 100>
+    name: 'Dominate',
+    badge: 'Dominate',
+    depth: 'Análise Profunda',
+    showUpgrade: false
   },
-  "highlights": [
-    "<ponto positivo 1>",
-    "<ponto positivo 2>",
-    "<ponto positivo 3>"
-  ],
-  "alerts": [
-    "<problema 1>",
-    "<problema 2>",
-    "<problema 3>",
-    "<problema 4>"
-  ],
-  "recommendations": [
-    "<recomendação prática 1>",
-    "<recomendação prática 2>",
-    "<recomendação prática 3>",
-    "<recomendação prática 4>"
-  ]
-}`,
-
-      1: `${base}
-
-Gere uma análise PROFUNDA e COMPLETA (Plano Essential) com exatamente este JSON:
-{
-  "score": <número de 0 a 100>,
-  "verdict": "<adjetivo curto>",
-  "ats_score": <número de 0 a 100>,
-  "keyword_density": <número de 0 a 100>,
-  "sections": {
-    "objetivo": <número de 0 a 100>,
-    "experiencia": <número de 0 a 100>,
-    "formacao": <número de 0 a 100>,
-    "habilidades": <número de 0 a 100>,
-    "layout": <número de 0 a 100>
+  2: {
+    name: 'Evolve',
+    badge: 'Evolve',
+    depth: 'Análise Avançada',
+    showUpgrade: true
   },
-  "benchmark": {
-    "mercado_medio": <número de 0 a 100>,
-    "posicao": "<ex: Acima da média / Abaixo da média>",
-    "percentil": <número de 0 a 100>
+  3: {
+    name: 'Ascend',
+    badge: 'Ascend',
+    depth: 'Análise Intermediária',
+    showUpgrade: true
   },
-  "highlights": [
-    "<ponto positivo 1>",
-    "<ponto positivo 2>",
-    "<ponto positivo 3>",
-    "<ponto positivo 4>"
-  ],
-  "alerts": [
-    "<problema 1>",
-    "<problema 2>",
-    "<problema 3>",
-    "<problema 4>"
-  ],
-  "action_plan": [
-    { "priority": "Alta", "action": "<ação concreta 1>", "impact": "<impacto esperado>" },
-    { "priority": "Alta", "action": "<ação concreta 2>", "impact": "<impacto esperado>" },
-    { "priority": "Média", "action": "<ação concreta 3>", "impact": "<impacto esperado>" },
-    { "priority": "Média", "action": "<ação concreta 4>", "impact": "<impacto esperado>" },
-    { "priority": "Baixa", "action": "<ação concreta 5>", "impact": "<impacto esperado>" }
-  ],
-  "keywords_missing": ["<palavra-chave 1>", "<palavra-chave 2>", "<palavra-chave 3>"],
-  "next_steps": "<parágrafo motivacional de 2 frases>"
-}`
-    };
-
-    return prompts[planId] || prompts[4];
+  4: {
+    name: 'Origin',
+    badge: 'Origin',
+    depth: 'Análise Básica',
+    showUpgrade: true
   }
+  };
 
  
   function fetchAnalysis(planId) {
