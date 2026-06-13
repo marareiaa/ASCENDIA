@@ -1,0 +1,288 @@
+/* ══════════════════════════════════════════
+   ASCENDIA — assets/css/planmodal.css
+   Modal de seleção de plano exibido após
+   o upload do currículo na página diagnóstico.
+══════════════════════════════════════════ */
+
+/* ── BACKDROP ── */
+#planModalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 0, 17, 0.78);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1080;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+#planModalBackdrop.pm-visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── MODAL ── */
+#planModal {
+  position: fixed;
+  inset: 0;
+  z-index: 1090;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(18px) scale(.97);
+  transition: opacity .32s ease, transform .32s ease;
+}
+
+#planModal.pm-visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0) scale(1);
+}
+
+/* ── INNER ── */
+.pm-inner {
+  position: relative;
+  background: var(--cream, #f5f0eb);
+  border-radius: 20px;
+  padding: 2.8rem 2.4rem 2.4rem;
+  max-width: 960px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.pm-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted, #888);
+  cursor: pointer;
+  line-height: 1;
+  padding: .3rem;
+  transition: color .2s;
+}
+
+.pm-close:hover { color: var(--coral, #e0303e); }
+
+/* ── HEADER ── */
+.pm-eyebrow {
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  color: var(--coral, #e0303e);
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+
+.pm-title {
+  font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+  font-weight: 900;
+  color: var(--text-dark, #160f1d);
+  margin-bottom: .4rem;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.pm-sub {
+  font-size: .88rem;
+  color: var(--text-muted, #666);
+  margin-bottom: 2rem;
+}
+
+/* ── GRID DE PLANOS ── */
+.pm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* ── CARD ── */
+.pm-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+  background: #fff;
+  border: 2px solid rgba(224, 48, 62, .15);
+  border-radius: 14px;
+  padding: 1.5rem 1.2rem 1.3rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color .22s, transform .22s, box-shadow .22s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.pm-card:hover {
+  border-color: var(--coral, #e0303e);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(224, 48, 62, .18);
+}
+
+/* Destaque — Plano 1 */
+.pm-card--highlight {
+  background: var(--grad, linear-gradient(135deg, #e0303e, #ff5a36));
+  border-color: transparent;
+  color: #fff;
+}
+
+.pm-card--highlight:hover {
+  box-shadow: 0 14px 40px rgba(255, 90, 54, .45);
+  border-color: transparent;
+}
+
+/* ── TAG ── */
+.pm-tag {
+  display: inline-block;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .18rem .6rem;
+  border-radius: 50px;
+  background: rgba(255,255,255,.22);
+  color: #fff;
+  margin-bottom: .2rem;
+}
+
+.pm-card:not(.pm-card--highlight) .pm-tag {
+  background: var(--grad, linear-gradient(135deg, #e0303e, #ff5a36));
+  color: #fff;
+}
+
+/* ── PLAN NAME ── */
+.pm-plan-name {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #888);
+}
+
+.pm-card--highlight .pm-plan-name { color: rgba(255,255,255,.75); }
+
+/* ── DEPTH ── */
+.pm-depth {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--text-dark, #160f1d);
+  line-height: 1.2;
+}
+
+.pm-card--highlight .pm-depth { color: #fff; }
+
+/* ── PREÇO ── */
+.pm-price {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--text-dark, #160f1d);
+  letter-spacing: -.02em;
+  line-height: 1;
+  margin: .2rem 0 .1rem;
+}
+
+.pm-price small {
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  vertical-align: middle;
+  margin-left: .1rem;
+}
+
+.pm-card--highlight .pm-price { color: #fff; }
+
+/* ── DESCRIÇÃO ── */
+.pm-desc {
+  font-size: .78rem;
+  color: var(--text-muted, #777);
+  line-height: 1.55;
+  border-top: 1px solid rgba(0,0,0,.07);
+  padding-top: .7rem;
+  margin-top: .2rem;
+}
+
+.pm-card--highlight .pm-desc { color: rgba(255,255,255,.82); border-color: rgba(255,255,255,.2); }
+
+/* ── FEATURES ── */
+.pm-features {
+  list-style: none;
+  padding: 0;
+  margin: .4rem 0 .6rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  flex: 1;
+}
+
+.pm-features li {
+  font-size: .75rem;
+  color: var(--text-dark, #160f1d);
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.pm-features li i {
+  color: var(--coral, #e0303e);
+  font-size: .85rem;
+  flex-shrink: 0;
+}
+
+.pm-card--highlight .pm-features li { color: rgba(255,255,255,.9); }
+.pm-card--highlight .pm-features li i { color: rgba(255,255,255,.9); }
+
+/* ── CTA ── */
+.pm-cta {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding: .6rem 0;
+  background: rgba(224, 48, 62, .08);
+  border-radius: 8px;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--coral, #e0303e);
+  text-align: center;
+  transition: background .2s;
+}
+
+.pm-card:hover .pm-cta {
+  background: rgba(224, 48, 62, .15);
+}
+
+.pm-card--highlight .pm-cta {
+  background: rgba(255,255,255,.18);
+  color: #fff;
+}
+
+.pm-card--highlight:hover .pm-cta {
+  background: rgba(255,255,255,.28);
+}
+
+/* ── RESPONSIVIDADE ── */
+@media (max-width: 900px) {
+  .pm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .pm-inner {
+    padding: 2rem 1.2rem 1.6rem;
+  }
+
+  .pm-grid {
+    grid-template-columns: 1fr;
+  }
+}

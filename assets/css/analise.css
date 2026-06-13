@@ -1,0 +1,429 @@
+/* ══════════════════════════════════════════
+   ASCENDIA — assets/css/analise.css
+   Estilos da página de resultados da análise
+   de currículo. Depende dos tokens de base.css.
+══════════════════════════════════════════ */
+
+/* ── HERO ── */
+.an-hero {
+  background:
+    radial-gradient(circle at 100% 100%,
+      rgba(255, 70, 40, 0.35) 0%,
+      rgba(190, 30, 30, 0.25) 20%,
+      rgba(70, 0, 30, 0.15) 45%,
+      transparent 70%),
+    #070011;
+  padding: 140px 0 60px;
+  text-align: center;
+}
+
+.an-eyebrow {
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--coral, #e0303e);
+  margin-bottom: .5rem;
+}
+
+.an-hero-h1 {
+  font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: .6rem;
+}
+
+.an-hero-sub {
+  font-size: .88rem;
+  color: rgba(255,255,255,.55);
+  margin: 0;
+}
+
+/* ── BODY SECTION ── */
+.an-body-section {
+  background: var(--cream, #f5f0eb);
+  padding: 60px 0 100px;
+  min-height: 50vh;
+}
+
+/* ── LOADING ── */
+.an-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0 4rem;
+  gap: 1rem;
+}
+
+.an-spinner {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+
+.an-spinner span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--grad, linear-gradient(135deg, #e0303e, #ff5a36));
+  animation: anBounce 1.2s ease-in-out infinite;
+}
+
+.an-spinner span:nth-child(2) { animation-delay: .16s; }
+.an-spinner span:nth-child(3) { animation-delay: .32s; }
+
+@keyframes anBounce {
+  0%, 80%, 100% { transform: scale(.7); opacity: .5; }
+  40%            { transform: scale(1.1); opacity: 1; }
+}
+
+.an-loading-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark, #160f1d);
+  margin: 0;
+}
+
+.an-dots::after {
+  content: '';
+  animation: anDots 1.6s steps(4, end) infinite;
+}
+
+@keyframes anDots {
+  0%   { content: ''; }
+  25%  { content: '.'; }
+  50%  { content: '..'; }
+  75%  { content: '...'; }
+  100% { content: ''; }
+}
+
+.an-loading-sub {
+  font-size: .82rem;
+  color: var(--text-muted, #888);
+  margin: 0;
+}
+
+/* ── SCORE CARD ── */
+.an-score-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 18px;
+  padding: 2rem 2.4rem;
+  margin-bottom: 2.4rem;
+  box-shadow: 0 6px 28px rgba(7, 0, 17, .07);
+  border: 1.5px solid rgba(224,48,62,.1);
+}
+
+.an-score-ring {
+  position: relative;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+}
+
+.an-score-ring svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.an-ring-bg {
+  fill: none;
+  stroke: rgba(224,48,62,.1);
+  stroke-width: 8;
+}
+
+.an-ring-fill {
+  fill: none;
+  stroke: url(#scoreGrad);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1);
+}
+
+/* fallback colour when SVG gradient isn't defined */
+.an-ring-fill { stroke: #e0303e; }
+
+.an-score-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--text-dark, #160f1d);
+  letter-spacing: -.03em;
+}
+
+.an-score-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted, #888);
+  margin-bottom: .3rem;
+}
+
+.an-score-verdict {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--text-dark, #160f1d);
+  margin-bottom: .5rem;
+}
+
+.an-score-plan-badge {
+  display: inline-block;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .2rem .7rem;
+  border-radius: 50px;
+  background: var(--grad, linear-gradient(135deg,#e0303e,#ff5a36));
+  color: #fff;
+  margin: 0;
+}
+
+/* ── CONTENT BLOCOS ── */
+.an-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* Bloco genérico */
+.an-block {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 4px 18px rgba(7,0,17,.05);
+  border: 1.5px solid rgba(224,48,62,.08);
+}
+
+.an-block-title {
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--coral, #e0303e);
+  margin-bottom: .8rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.an-block-title i { font-size: 1rem; }
+
+.an-block-body {
+  font-size: .88rem;
+  color: var(--text-muted, #666);
+  line-height: 1.7;
+}
+
+.an-block-body p { margin-bottom: .6rem; }
+.an-block-body p:last-child { margin-bottom: 0; }
+
+/* Lista de itens */
+.an-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.an-list li {
+  font-size: .86rem;
+  color: var(--text-dark, #160f1d);
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  line-height: 1.5;
+}
+
+.an-list li i {
+  margin-top: .12rem;
+  flex-shrink: 0;
+  font-size: .9rem;
+}
+
+.an-list li i.bi-check-circle-fill { color: #22c55e; }
+.an-list li i.bi-exclamation-circle-fill { color: #f59e0b; }
+.an-list li i.bi-x-circle-fill { color: #ef4444; }
+.an-list li i.bi-arrow-right-circle-fill { color: var(--coral, #e0303e); }
+
+/* Grade de métricas (planos avançados) */
+.an-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.an-metric {
+  background: var(--cream, #f5f0eb);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  text-align: center;
+}
+
+.an-metric-val {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--text-dark, #160f1d);
+  line-height: 1;
+  margin-bottom: .2rem;
+}
+
+.an-metric-val span {
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.an-metric-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #888);
+}
+
+/* Barra de progresso por habilidade */
+.an-skill-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+
+.an-skill-bar {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.an-skill-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--text-dark, #160f1d);
+}
+
+.an-skill-bar-track {
+  height: 7px;
+  background: rgba(224,48,62,.1);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.an-skill-bar-fill {
+  height: 100%;
+  border-radius: 50px;
+  background: var(--grad, linear-gradient(90deg, #e0303e, #ff5a36));
+  width: 0;
+  transition: width 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── UPGRADE CTA ── */
+.an-upgrade-cta {
+  margin-top: 2.4rem;
+}
+
+.an-upgrade-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  background: var(--grad, linear-gradient(135deg, #e0303e, #ff5a36));
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  flex-wrap: wrap;
+}
+
+.an-upgrade-icon {
+  font-size: 2rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.an-upgrade-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: .25rem;
+}
+
+.an-upgrade-desc {
+  font-size: .82rem;
+  color: rgba(255,255,255,.82);
+  margin: 0;
+}
+
+.an-upgrade-inner .btn-diagnostico {
+  margin-left: auto;
+  background: #fff;
+  color: var(--coral, #e0303e);
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+  white-space: nowrap;
+}
+
+.an-upgrade-inner .btn-diagnostico:hover {
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0,0,0,.2);
+}
+
+/* ── ERRO ── */
+.an-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 0 4rem;
+  gap: .8rem;
+}
+
+.an-error-icon {
+  font-size: 2.8rem;
+  color: #ef4444;
+}
+
+.an-error-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-dark, #160f1d);
+  margin: 0;
+}
+
+.an-error-desc {
+  font-size: .88rem;
+  color: var(--text-muted, #888);
+  max-width: 380px;
+  margin: 0 0 .8rem;
+}
+
+/* ── RESPONSIVIDADE ── */
+@media (max-width: 600px) {
+  .an-score-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.6rem 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .an-upgrade-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .an-upgrade-inner .btn-diagnostico {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
