@@ -122,44 +122,19 @@
    DIAGNÓSTICO — responsividade
 ══════════════════════════════════════════ */
 @media (max-width: 767px) {
-  .site-footer .row {
-    text-align: center;
-  }
-
-  .footer-brand-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-socials {
-    justify-content: center;
-  }
-
-  .footer-links {
-    align-items: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-bottom-links {
-    justify-content: center;
-  }
-
-  .footer-cta {
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-newsletter {
-    width: 100%;
-  }
+  .diag-hero-section { padding: 120px 0 50px; }
+  .diag-intro-section { padding: 40px 0 20px; }
+  .diag-upload-box { padding: 2.2rem 1rem; }
 }
+
+/* ══════════════════════════════════════════
+   LOGIN — responsividade
+══════════════════════════════════════════ */
+@media (max-width: 575px) {
+  .login-section { padding: 120px 0 50px; }
+  .login-card { padding: 2rem 1.5rem; }
+}
+
 /* ══════════════════════════════════════════
    ACESSIBILIDADE DE MOVIMENTO
    Atua apenas quando o usuário pede "reduzir

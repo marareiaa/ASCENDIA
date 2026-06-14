@@ -3,25 +3,31 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Análise do seu currículo — Ascendia"/>
+  <meta name="description" content="Acesse sua conta Ascendia e continue evoluindo sua carreira."/>
   <meta name="theme-color" content="#160f1d"/>
-  <title>Análise do Currículo — Ascendia</title>
+  <meta property="og:title" content="Login — Ascendia"/>
+  <meta property="og:description" content="Acesse sua conta Ascendia."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/img/marca.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <title>Login — Ascendia</title>
   <link rel="icon" href="assets/img/marca.png" type="image/png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- CSS modular (carregado na ordem) -->
   <link rel="stylesheet" href="assets/css/base.css"/>
   <link rel="stylesheet" href="assets/css/navbar.css"/>
-  <link rel="stylesheet" href="assets/css/diagnostico.css"/>
+  <link rel="stylesheet" href="assets/css/login.css"/>
   <link rel="stylesheet" href="assets/css/footer.css"/>
   <link rel="stylesheet" href="assets/css/responsive.css"/>
   <link rel="stylesheet" href="assets/css/enhancements.css"/>
-  <link rel="stylesheet" href="assets/css/analise.css"/>
 </head>
 <body>
 
+<!-- Barra de progresso de scroll -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- NAVBAR -->
@@ -79,86 +85,73 @@
       <li><a class="mobile-nav-link" href="login.html">Login</a></li>
       <li><a class="mobile-nav-link" href="cadastro.html">Cadastrar-se</a></li>
     </ul>
-    <a href="cadastro.html" class="btn-cadastrar w-100 text-center mt-auto" data-bs-dismiss="offcanvas">Cadastrar-se</a>
   </div>
 </div>
 
 <main>
 
-  <!-- HERO RESULTADO -->
-  <section class="an-hero">
-    <div class="container">
-      <p class="an-eyebrow" id="anPlanLabel">PLANO ESSENTIAL</p>
-      <h1 class="an-hero-h1">Análise do seu currículo</h1>
-      <p class="an-hero-sub" id="anFileName">Carregando arquivo…</p>
+<!-- LOGIN -->
+<section id="login" class="login-section">
+  <div class="container">
+    <div class="login-card reveal">
+
+      <div class="login-logo">
+        <img src="assets/img/marca.png" alt="Ascendia" width="180" height="47">
+      </div>
+
+      <h1 class="login-title">Bem-vindo de volta</h1>
+      <p class="login-subtitle">Entre na sua conta para continuar sua evolução profissional.</p>
+
+      <form class="login-form" id="loginForm">
+        <div class="login-field">
+          <label for="loginEmail">E-mail</label>
+          <input type="email" id="loginEmail" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required/>
+        </div>
+
+        <div class="login-field">
+          <label for="loginPassword">Senha</label>
+          <div class="login-password-wrap">
+            <input type="password" id="loginPassword" name="password" placeholder="Digite sua senha" autocomplete="current-password" required/>
+            <button type="button" class="login-toggle-pass" id="togglePassword" aria-label="Mostrar senha">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="login-options">
+          <label class="login-remember">
+            <input type="checkbox" id="rememberMe" name="remember"/>
+            <span>Lembrar de mim</span>
+          </label>
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+
+        <button type="submit" class="btn-login">Entrar</button>
+      </form>
+
+      <div class="login-divider">ou continue com</div>
+
+      <button type="button" class="btn-social">
+        <i class="bi bi-google"></i> Entrar com Google
+      </button>
+      <button type="button" class="btn-social">
+        <i class="bi bi-linkedin"></i> Entrar com LinkedIn
+      </button>
+
+      <p class="login-footer-text">
+        Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a>
+      </p>
     </div>
-  </section>
-
-  <!-- CONTEÚDO DA ANÁLISE -->
-  <section class="an-body-section">
-    <div class="container">
-
-      <!-- Estado de loading -->
-      <div class="an-loading" id="anLoading">
-        <div class="an-spinner" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </div>
-        <p class="an-loading-text">Analisando seu currículo<span class="an-dots"></span></p>
-        <p class="an-loading-sub">Isso pode levar alguns segundos.</p>
-      </div>
-
-      <!-- Resultado da análise -->
-      <div class="an-result" id="anResult" hidden>
-
-        <!-- Score card -->
-        <div class="an-score-card" id="anScoreCard">
-          <div class="an-score-ring" id="anScoreRing">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <circle class="an-ring-bg" cx="60" cy="60" r="50"/>
-              <circle class="an-ring-fill" cx="60" cy="60" r="50" id="anRingFill"/>
-            </svg>
-            <span class="an-score-num" id="anScoreNum">0</span>
-          </div>
-          <div class="an-score-info">
-            <p class="an-score-label">Score de Empregabilidade</p>
-            <p class="an-score-verdict" id="anScoreVerdict">—</p>
-            <p class="an-score-plan-badge" id="anPlanBadge">Plano Free</p>
-          </div>
-        </div>
-
-        <!-- Corpo dinâmico gerado pela IA -->
-        <div class="an-content" id="anContent"></div>
-
-        <!-- CTA upgrade (visível nos planos inferiores) -->
-        <div class="an-upgrade-cta" id="anUpgradeCta" hidden>
-          <div class="an-upgrade-inner">
-            <i class="bi bi-stars an-upgrade-icon"></i>
-            <div>
-              <p class="an-upgrade-title">Quer uma análise mais profunda?</p>
-              <p class="an-upgrade-desc">Faça upgrade e receba diagnóstico completo, benchmark de mercado e plano de ação personalizado.</p>
-            </div>
-            <a href="index.html#planos" class="btn-diagnostico">Ver planos</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Estado de erro -->
-      <div class="an-error" id="anError" hidden>
-        <i class="bi bi-exclamation-triangle an-error-icon"></i>
-        <p class="an-error-title">Algo deu errado</p>
-        <p class="an-error-desc" id="anErrorDesc">Não foi possível gerar a análise. Tente novamente.</p>
-        <a href="diagnostico.html" class="btn-diagnostico">Tentar novamente</a>
-      </div>
-
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="container">
+
+    <!-- Faixa de newsletter -->
     <div class="footer-cta reveal">
       <div class="footer-cta-text">
         <h3>Receba dicas de carreira no seu e-mail</h3>
@@ -173,6 +166,8 @@
         </button>
       </form>
     </div>
+
+    <!-- Marca + colunas -->
     <div class="footer-main">
       <div class="row g-4 align-items-start">
         <div class="col-12 col-lg-4">
@@ -187,7 +182,9 @@
             <li><a href="index.html#hero">Início</a></li>
             <li><a href="index.html#como-funciona">Como funciona</a></li>
             <li><a href="index.html#planos">Planos</a></li>
+            <li><a href="index.html#problema">Diferenciais</a></li>
             <li><a href="index.html#depoimentos">Depoimentos</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
@@ -195,6 +192,7 @@
           <ul class="footer-links">
             <li><a href="index.html#quem-somos">Sobre a Ascendia</a></li>
             <li><a href="#">Para Empresas</a></li>
+            <li><a href="index.html#depoimentos">Depoimentos</a></li>
             <li><a href="#">Contato</a></li>
           </ul>
         </div>
@@ -215,6 +213,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Barra inferior -->
       <div class="footer-bottom">
         <span>© 2026 Ascendia. Todos os direitos reservados.</span>
         <div class="footer-bottom-links">
@@ -226,12 +226,13 @@
   </div>
 </footer>
 
+<!-- Voltar ao topo -->
 <button id="backToTop" class="back-to-top" type="button" aria-label="Voltar ao topo">
   <i class="bi bi-arrow-up"></i>
 </button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
-<script src="assets/js/analise.js"></script>
+<script src="assets/js/login.js"></script>
 </body>
 </html>

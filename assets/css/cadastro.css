@@ -1,0 +1,49 @@
+/* ══════════════════════════════════════════
+   CADASTRO — assets/css/cadastro.css
+   Reaproveita a base de login.css (.login-section,
+   .login-card, .login-field, etc). Aqui ficam só os
+   ajustes específicos da página de cadastro.
+══════════════════════════════════════════ */
+
+/* Card um pouco mais largo (mais campos que o login) */
+.cadastro-card {
+  max-width: 480px;
+}
+
+/* Dica de requisito da senha */
+.cadastro-hint {
+  display: block;
+  font-size: .72rem;
+  color: var(--text-muted);
+  margin-top: .35rem;
+}
+
+/* Checkbox de termos */
+.cadastro-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: .78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: .2rem 0 1.4rem;
+  cursor: pointer;
+}
+
+.cadastro-terms input {
+  width: 16px;
+  height: 16px;
+  margin-top: .2rem;
+  flex-shrink: 0;
+  accent-color: var(--coral);
+  cursor: pointer;
+}
+
+.cadastro-terms a {
+  color: var(--coral);
+  font-weight: 700;
+}
+
+.cadastro-terms a:hover {
+  color: var(--red);
+}
