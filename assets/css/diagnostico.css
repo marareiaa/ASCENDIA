@@ -20,7 +20,7 @@
 }
 
 .diag-hero-h1 {
-  sfont-size: clamp(1rem, 3vw, 2rem);  
+  font-size: clamp(1rem, 3vw, 2rem);  
   font-weight: 600;
   letter-spacing: .05em;
   text-transform: uppercase;
@@ -174,12 +174,5 @@
   transform: translateY(-2px);
   box-shadow: 0 14px 38px rgba(255,90,54,.5);
 }
-
-.btn-diagnostico:disabled {
-  opacity: .6;
-  cursor: not-allowed;
-  transform: none;
-}
-
 /* Responsividade desta página fica centralizada em
    assets/css/responsive.css (mesmo padrão das demais seções) */

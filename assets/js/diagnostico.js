@@ -55,7 +55,7 @@
   // ── MODAL DE SELEÇÃO DE PLANO ──────────────────────────
   const plans = [
       {
-   id: 4,
+    id: 4,
     name: 'ORIGIN',
     tag: null,
     price: 'R$ 19,90',
@@ -66,7 +66,7 @@
     highlight: false
   },
   {
-   id: 3,
+    id: 3,
     name: 'ASCEND',
     tag: 'MAIS POPULAR!',
     price: 'R$ 39,90',
@@ -77,7 +77,7 @@
     highlight: true 
   },
   {
-    id: 3,
+    id: 2,
     name: 'EVOLVE',
     tag: null,
     price: 'R$ 69,90',
@@ -88,7 +88,7 @@
     highlight: false
   },
   {
-     id: 1,
+    id: 1,
     name: 'DOMINATE',
     tag: null,
     price: 'R$ 119,90',
