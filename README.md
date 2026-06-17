@@ -337,4 +337,5 @@ O plano Ascend é destacado na interface como "Mais Popular", servindo como ânc
 
 ---
 
+
 © 2026 Ascendia. Todos os direitos reservados.
