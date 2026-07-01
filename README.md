@@ -1,6 +1,6 @@
 # Ascendia
 
-**Eleve seu potencial. Conquiste oportunidades.**
+**Eleve seu potencial. Conquiste oportunidades.** 
 
 Plataforma web de otimização de currículos com diagnóstico simulado por IA, construída com HTML5, CSS3, Bootstrap 5 e JavaScript puro.
 
